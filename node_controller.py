@@ -17,7 +17,7 @@ import sys # For sys.exit()
 
 # === Device Info ===
 HOSTNAME = socket.gethostname()
-LOG_FILE_PATH = f"/var/log/{HOSTNAME}_algae_sensor.log" # Centralized log file
+LOG_FILE_PATH = f"/home/{HOSTNAME}/algae_node/{HOSTNAME}_algae_sensor.log"
 
 # === Logging Setup ===
 def log_message(level, message):
