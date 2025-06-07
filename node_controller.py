@@ -32,7 +32,7 @@ def log_message(level, message):
         print(f"[{timestamp}] [ERROR] Failed to write to log file {LOG_FILE_PATH}: {e}")
 
 # === Load Config ===
-CONFIG_PATH = f"/home/Agrineuro1/config/{HOSTNAME}.json"
+CONFIG_PATH = f"/home/{HOSTNAME}/config/{HOSTNAME}.json"
 config = {}
 try:
     with open(CONFIG_PATH, "r") as f:
