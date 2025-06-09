@@ -51,8 +51,10 @@ except Exception as e:
 # === MQTT Setup ===
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 try:
-    mqttc.username_pw_set(config["mqtt_user"], config["mqtt_pass"])
-    mqttc.connect(config["mqtt_host"], config["mqtt_port"])
+     mqtt_config = config["mqtt"]
+     mqttc.username_pw_set(mqtt_config["mqtt_user"], mqtt_config["mqtt_pass"])
+     mqttc.connect(mqtt_config["mqtt_host"], mqtt_config["mqtt_port"])
+
 except KeyError as e:
     log_message("ERROR", f"Missing MQTT credential in config: {e}. Exiting.")
     sys.exit(1)
